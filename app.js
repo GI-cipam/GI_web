@@ -2,12 +2,12 @@ var express=require('express');
 var nodemailer = require('nodemailer');
 var firebase = require('firebase');
 var app = firebase.initializeApp({ 
-  apiKey: "AIzaSyAeFB6v4sdJpdnvHM6xIIiJz4Us5XibKIA",
-  authDomain: "gi-website-36c02.firebaseapp.com",
-  databaseURL: "https://gi-website-36c02.firebaseio.com",
-  projectId: "gi-website-36c02",
-  storageBucket: "gi-website-36c02.appspot.com",
-  messagingSenderId: "1092547245593"});
+    apiKey: "AIzaSyCFS8wmVg-qy3VEXPCr2wooxKPNrZgBG4M",
+    authDomain: "gi-india.firebaseapp.com",
+    databaseURL: "https://gi-india.firebaseio.com",
+    projectId: "gi-india",
+    storageBucket: "gi-india.appspot.com",
+    messagingSenderId: "901822549863"});
 
   var smtpTransport = nodemailer.createTransport({
     service: "gmail",
@@ -36,8 +36,14 @@ app.use('/', home);
 app.use('/signIn',signin);
 app.use('/signUp',signup);
 
+var gisArray;
 //serve quiz
 app.get('/allGI', function(req, res){
+    var allGisRef = firebase.database().ref('Giproducts/');
+    allGisRef.on('value',function(snapshot){
+    gisArray=snapshot.val();
+    //console.log(typeof(gisArray));
+ 	});
 	res.render('allGI');
 });
 
