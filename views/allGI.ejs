@@ -5,13 +5,18 @@
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
     </head>
     <body>
-            <div class="card" style="width:400px">
-                    <img class="card-img-top" src="../public/img_avatar.png" alt="Card image">
+            
+            <% for (var key in gisArray) { %>
+                <%console.log(gisArray[key].name)%>
+                
+                <div class="card" style="width:400px">
+                    <img class="card-img-top" src=<%=gisArray[key].dpurl%> alt="Card image">
                     <div class="card-body">
-                      <h4 class="card-title">John Doe</h4>
-                      <p class="card-text">Some example text.</p>
+                      <h4 class="card-title"><%=gisArray[key].name%></h4>
+                      <p class="card-text"><%=gisArray[key].detail%></p>
                       <a href="#" class="btn btn-primary">See Profile</a>
                     </div>
                   </div>
+                  <% } %> 
     </body>
 </html>

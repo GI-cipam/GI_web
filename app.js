@@ -39,12 +39,12 @@ app.use('/signUp',signup);
 var gisArray;
 //serve quiz
 app.get('/allGI', function(req, res){
-    var allGisRef = firebase.database().ref('Giproducts/');
+    var allGisRef = firebase.database().ref('Giproducts');
     allGisRef.on('value',function(snapshot){
     gisArray=snapshot.val();
     //console.log(typeof(gisArray));
  	});
-	res.render('allGI');
+	res.render('allGI',{gisArray:gisArray});
 });
 
 app.get('/send',function(req,res){
