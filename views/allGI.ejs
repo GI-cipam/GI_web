@@ -7,14 +7,13 @@
     <body>
             
             <% for (var key in gisArray) { %>
-                <%console.log(gisArray[key].name)%>
-                
+                <%console.log(key)%>
                 <div class="card" style="width:400px">
                     <img class="card-img-top" src=<%=gisArray[key].dpurl%> alt="Card image">
                     <div class="card-body">
                       <h4 class="card-title"><%=gisArray[key].name%></h4>
                       <p class="card-text"><%=gisArray[key].detail%></p>
-                      <a href="#" class="btn btn-primary">See Profile</a>
+                      <a class="btn btn-primary" href=<%=key%>>See Profile</a>
                     </div>
                   </div>
                   <% } %> 

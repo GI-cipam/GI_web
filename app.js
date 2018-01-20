@@ -65,6 +65,15 @@ app.get('/send',function(req,res){
 });
 });
 
+app.get('/:id',function(req,res){
+    var giQuery=firebase.database().ref('Giproducts');
+	const query=giQuery.orderByKey().equalTo(req.params.id);
+	query.on('value',snap=>{
+		console.log(snap.val());
+	});	
+    //console.log(req.params.id)
+});
+
 
 // serve static files
 app.use(express.static('public'));
