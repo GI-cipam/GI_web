@@ -297,3 +297,10 @@ ul.social-icons {
     margin-right: 5%;
     margin-left:5%;
 }
+
+.thumbnail img{
+    width: 100%;
+}
+.thumbnail{
+    padding: 0;
+}
