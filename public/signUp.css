@@ -50,7 +50,5 @@ input[type=text], input[type=password] {
     }
 }
 body{
-    background: #1c92d2; /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #1c92d2, #f2fcfe); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #1c92d2, #f2fcfe);
+    background: #f7f7f7;
 }

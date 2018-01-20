@@ -5,9 +5,9 @@
 body {
     padding-top: 3rem;
     padding-bottom: 3rem;
-    color: #5a5a5a;
-	background: darkslategrey !important;
-
+    /* color: #5a5a5a; */
+	/* background: darkslategrey !important; */
+    background: #f7f7f7;
   }
   .clsScroll{
 	  overflow-x: auto;
@@ -152,7 +152,6 @@ body {
 body {
     font-family: 'Lato', sans-serif;
     color: black;
-    background: #322f30;
     -webkit-font-smoothing: antialiased;
 }
 a {
@@ -208,7 +207,7 @@ ul.social-icons {
     -moz-transition:.5s;
     -webkit-transition:.5s;
     transition: .5s;
-    background-color:rgb(57, 109, 109);
+    background-color:#2d4d64;
 }
 .fa-facebook:hover {
     background-color: #3d5b99;
@@ -220,7 +219,7 @@ ul.social-icons {
     -moz-transition:.5s;
     -webkit-transition:.5s;
     transition: .5s;
-    background-color: rgb(57, 109, 109);
+    background-color: #2d4d64;
 }
 .fa-twitter:hover {
     background-color: #00aced;
@@ -232,7 +231,7 @@ ul.social-icons {
     -moz-transition:.5s;
     -webkit-transition:.5s;
     transition: .5s;
-    background-color: rgb(57, 109, 109);
+    background-color: #2d4d64;
 }
 .fa-rss:hover {
     background-color: #eb8231;
@@ -244,7 +243,7 @@ ul.social-icons {
     -moz-transition:.5s;
     -webkit-transition:.5s;
     transition: .5s;
-    background-color: rgb(57, 109, 109);
+    background-color: #2d4d64;
 }
 .fa-youtube:hover {
     background-color: #e64a41;
@@ -256,7 +255,7 @@ ul.social-icons {
     -moz-transition:.5s;
     -webkit-transition:.5s;
     transition: .5s;
-    background-color: rgb(57, 109, 109);
+    background-color: #2d4d64;
 }
 .fa-linkedin:hover {
     background-color: #0073a4;
@@ -268,7 +267,7 @@ ul.social-icons {
     -moz-transition:.5s;
     -webkit-transition:.5s;
     transition: .5s;
-    background-color: rgb(57, 109, 109);
+    background-color: #2d4d64;
 }
 .fa-google-plus:hover {
     background-color: #e25714;
@@ -292,8 +291,9 @@ ul.social-icons {
 }
 #map{
     margin-top: 20px;
-    margin-left:27%; 
-    margin-right:30%;
     height: 500px;
-    padding-right: 800px;
+    border-radius: 7%;
+    width: 90%;
+    margin-right: 5%;
+    margin-left:5%;
 }
