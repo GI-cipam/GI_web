@@ -65,12 +65,15 @@ app.get('/send',function(req,res){
 });
 });
 
+var giDetails;
 app.get('/gi/:id',function(req,res){
     var giQuery=firebase.database().ref('Giproducts');
 	const query=giQuery.orderByKey().equalTo(req.params.id);
 	query.on('value',snap=>{
-		console.log(snap.val());
-	});	
+        //console.log(snap.val());
+        giDetails=snap.val();
+        res.render('gi',{giDetails:giDetails})
+    });	
     //console.log(req.params.id)
 });
 

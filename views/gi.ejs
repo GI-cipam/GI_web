@@ -6,15 +6,15 @@
     </head>
     <body>
             
-            <% for (var key in gisArray) { %>
-                <div class="card" style="width:400px">
-                    <img class="card-img-top" src=<%=gisArray[key].dpurl%> alt="Card image">
-                    <div class="card-body">
-                      <h4 class="card-title"><%=gisArray[key].name%></h4>
-                      <p class="card-text"><%=gisArray[key].detail%></p>
-                      <a class="btn btn-primary" href=<%="gi/"+key%>>See Profile</a>
+            
+                <%console.log(giDetails)%>
+                <% for (var key in giDetails) { %>
+                <div style="width:400px">
+                    <img style="width:200px; height:200px" src=<%=giDetails[key].dpurl%> alt="Card image">
+                      <h4 class="card-title"><%=giDetails[key].name%></h4>
+                      <p class="card-text"><%=giDetails[key].detail%></p>
                     </div>
                   </div>
-                  <% } %> 
+                  <%}%>
     </body>
 </html>
