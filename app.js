@@ -29,9 +29,17 @@ var server=app.listen(port,function(){
     console.log('listening to request on port 4000')
 });
 
+//set view engine to EJS
+app.set('view engine', 'ejs');
+
 app.use('/', home);
 app.use('/signIn',signin);
 app.use('/signUp',signup);
+
+//serve quiz
+app.get('/allGI', function(req, res){
+	res.render('allGI');
+});
 
 app.get('/send',function(req,res){
   var mailOptions={
