@@ -77,11 +77,16 @@ app.get('/gi/:id',function(req,res){
     //console.log(req.params.id)
 });
 
+var searched;
 app.get('/search/:id',function(req,res){
-    //console.log(req.params.id)
-    res.render('search');
+    var giQuery=firebase.database().ref('Giproducts');
+	const query=giQuery.orderByChild('name').equalTo(req.params.id);
+	query.on('value',snap=>{
+        console.log(snap.val());
+        searched=snap.val();
+        res.render('gi',{giDetails:searched})
+    });	
 });
-
 
 // serve static files
 app.use(express.static('public'));
