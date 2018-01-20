@@ -65,7 +65,7 @@ app.get('/send',function(req,res){
 });
 });
 
-app.get('/:id',function(req,res){
+app.get('/gi/:id',function(req,res){
     var giQuery=firebase.database().ref('Giproducts');
 	const query=giQuery.orderByKey().equalTo(req.params.id);
 	query.on('value',snap=>{
