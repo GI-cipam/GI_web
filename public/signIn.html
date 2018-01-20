@@ -37,10 +37,8 @@
         </ul>
 
 
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search for GI" aria-label="Search" id="search_item">
-            <button class="btn btn-outline-link my-2 my-sm-0 "  onclick="search()" type="submit">Search</button>
-          </form>
+        <input class="form-control mr-sm-2" type="search" placeholder="Search for GI" style="width:150px;" aria-label="Search" id="search_item">
+        <button class="btn btn-outline-link my-2 my-sm-0 button1 "  onclick="search()">Search</button>
 
       </div>
     </nav>
@@ -78,6 +76,12 @@
           messagingSenderId: "1092547245593"
         };
         firebase.initializeApp(config);
+
+        function search(){
+      var search=document.getElementById('search_item').value;
+      console.log(search)
+      location.href="/search/"+search;
+    }
 
         function submit(){
         var email=document.getElementById('email').value;

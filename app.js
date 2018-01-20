@@ -77,6 +77,11 @@ app.get('/gi/:id',function(req,res){
     //console.log(req.params.id)
 });
 
+app.get('/search/:id',function(req,res){
+    //console.log(req.params.id)
+    res.render('search');
+});
+
 
 // serve static files
 app.use(express.static('public'));
