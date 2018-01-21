@@ -54,7 +54,7 @@
 
                       <input class="form-control mr-sm-2" type="search" placeholder="Search for GI" style="width:150px;" aria-label="Search" id="search_item">
                       <button class="btn btn-outline-link my-2 my-sm-0 button1 "  onclick="search()">Search</button>
-        
+
 
                     </div>
                   </nav>
@@ -87,9 +87,9 @@
                  </div>
 
 
-                   
 
-<!-- 
+
+<!--
 				<span id="theading1" style="color:rgb(34, 32, 32) ;padding-top:15px; margin-left:3%; font-family: 'Philosopher', sans-serif; font-size: 30px; color: rgb(34, 32, 32);"></span>
 
 				<div style="margin-left:3%">
@@ -210,16 +210,16 @@
 				</div>
 				</div>
         </div> -->
-     
-   
+
+
           <div style="margin:20px 20px 10% 5%">
 
-            
-         
+
+
           <div class="jumbotron">
               <i style="padding-left:20%" class="fa fa-globe fa-5x" aria-hidden="true"></i><span style="text-align:center;text-align:center;font-family: 'Oswald', sans-serif;font-size:60px"> Geographical Indications of India</span >
               <!-- <p style="text-align:center">Here Are some Popular geographical Indications of India</p>	 -->
-              
+
             </div>
             <div  id="carouselExampleIndicators" class="carousel slide span12" data-ride="carousel" style="margin:0 auto; width:95%;border-radius:8%">
                 <div class="row">
@@ -255,13 +255,13 @@
 
             <hr>
 
-            
 
-            
+
+
               <div class="jumbotron">
                   <i style="padding-left:40px" class="fa fa-picture-o fa-5x" aria-hidden="true"></i> <span style="text-align:center;font-family: 'Oswald', sans-serif;font-size:50px">Here Are some Popular geographical Indications of India</span>
               </div>
-           
+
 
             <div class="row">
               <div class="col-lg-4 col-md-6 col-sm-6">
@@ -311,7 +311,7 @@
               </div>
                 </div>
               </div>
-              
+
               <div class="col-lg-4 col-md-6 col-sm-6 ">
                 <div class="thumbnail">
                   <img src="https://source.unsplash.com/CQl3Y5bV6FA">
@@ -322,7 +322,7 @@
                       </p>
               </div>
                 </div>
-              </div> 
+              </div>
               <div class="col-lg-4 col-md-6 col-sm-6 ">
                 <div class="thumbnail">
                   <img src="https://source.unsplash.com/cFplR9ZGnAk">
@@ -333,32 +333,39 @@
                       </p>
               </div>
                 </div>
-              </div>  
-      
+              </div>
+
         </div>
         <div class="container" style="text-align:center">
-            
+
           <a href="/allGI" class="btn btn-lg btn-info">Click here to View all GI's</a>
        </div>
       </div>
 
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>       
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
 <script>
   // Initialize Firebase
   var config = {
-    apiKey: "AIzaSyAeFB6v4sdJpdnvHM6xIIiJz4Us5XibKIA",
+    /*apiKey: "AIzaSyAeFB6v4sdJpdnvHM6xIIiJz4Us5XibKIA",
     authDomain: "gi-website-36c02.firebaseapp.com",
     databaseURL: "https://gi-website-36c02.firebaseio.com",
     projectId: "gi-website-36c02",
     storageBucket: "gi-website-36c02.appspot.com",
-    messagingSenderId: "1092547245593"
+    messagingSenderId: "1092547245593"*/
+
+    apiKey: "AIzaSyCFS8wmVg-qy3VEXPCr2wooxKPNrZgBG4M",
+    authDomain: "gi-india.firebaseapp.com",
+    databaseURL: "https://gi-india.firebaseio.com",
+    projectId: "gi-india",
+    storageBucket: "gi-india.appspot.com",
+    messagingSenderId: "901822549863"
   };
 
   function email(){
     $.get("http://localhost:4000/send",{to:window.user,subject:"hey",text:"haha email send"},function(data){
-        if(data=="sent"){        
+        if(data=="sent"){
           console.log('email send');
         }
         });
@@ -384,7 +391,7 @@
         logIn.innerHTML="Signed in as:"+user.email;
         signIn.innerHTML="";
         // logout.innerHTML="";
-        
+
         console.log(user.email);
         email();
         }
@@ -500,7 +507,7 @@
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
 
     <div id="map"></div>
-     
+
     <script type="text/javascript">
     var locations = [
       ['Darjeeling', 27.0360066, 88.26267510000002, 4],
@@ -520,7 +527,7 @@
 
     var marker, i;
 
-    for (i = 0; i < locations.length; i++) { 
+    for (i = 0; i < locations.length; i++) {
       marker = new google.maps.Marker({
         position: new google.maps.LatLng(locations[i][1], locations[i][2]),
         map: map
