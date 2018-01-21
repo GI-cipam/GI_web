@@ -41,6 +41,9 @@
       </nav>
               <div class="container" style="margin-top:7em; width:100%;background:rgb(236, 232, 232)">
                   <%console.log(giDetails)%>
+                  <% if(giDetails===null) { %>
+                    <h4>Sorry! No such GI found! Try Again.</h4>
+                    <%}else{%>
                   <% for (var key in giDetails) { %>
                           <button type="button" class="btn btn-primary" style="width:100%;border-radius:10%;margin-top:10px;margin-bottom:10px"><h1><%=giDetails[key].name%></h1></button>
                           <div class="row">
@@ -52,7 +55,7 @@
                               </div>
                           </div>          
                     </div>  
-                    <%}%>
+                    <%}}%>
 
                 
 
