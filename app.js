@@ -77,6 +77,16 @@ app.get('/gi/:id',function(req,res){
     //console.log(req.params.id)
 });
 
+var statesArray;
+app.get('/states', function(req, res){
+    var statesRef = firebase.database().ref('States');
+    statesRef.on('value',function(snapshot){
+    statesArray=snapshot.val();
+    //console.log(typeof(gisArray));
+ 	});
+	res.render('states',{statesArray:statesArray});
+});
+
 var searched;
 app.get('/search/:id',function(req,res){
     var giQuery=firebase.database().ref('Giproducts');
