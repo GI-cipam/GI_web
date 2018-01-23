@@ -87,6 +87,16 @@ app.get('/states', function(req, res){
 	res.render('states',{statesArray:statesArray});
 });
 
+var categoryArray;
+app.get('/categories', function(req, res){
+    var categoryRef = firebase.database().ref('Categories');
+    categoryRef.on('value',function(snapshot){
+    categoryArray=snapshot.val();
+    //console.log(typeof(gisArray));
+ 	});
+	res.render('categories',{categoryArray:categoryArray});
+});
+
 var searched;
 app.get('/search/:id',function(req,res){
     var giQuery=firebase.database().ref('Giproducts');
