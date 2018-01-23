@@ -53,6 +53,12 @@
                               <div class="col-lg-6 col-md-6 col-sm-12">
                                   <h2 style="margin-top:25%"><%=giDetails[key].detail %></h2>
                               </div>
+                              <div>
+                                  <h2>Uniqueness:</h2>
+                                  <%for (var k in giDetails[key].uniqueness){%>
+                                  <p><%=giDetails[key].uniqueness[k].info %></p>
+                                  <%}%>
+                              </div>
                           </div>          
                     </div>  
                     <%}}%>
