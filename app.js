@@ -47,23 +47,23 @@ app.get('/allGI', function(req, res){
 	res.render('allGI',{gisArray:gisArray});
 });
 
-app.get('/send',function(req,res){
-  var mailOptions={
-      to : req.query.to,
-      subject : req.query.subject,
-      text : req.query.text
-  }
-  console.log(mailOptions);
-  smtpTransport.sendMail(mailOptions, function(error, response){
-   if(error){
-          console.log(error);
-      res.end("error");
-   }else{
-          console.log("Message sent: " + response.message);
-      res.end("sent");
-       }
-});
-});
+// app.get('/send',function(req,res){
+//   var mailOptions={
+//       to : req.query.to,
+//       subject : req.query.subject,
+//       text : req.query.text
+//   }
+//   console.log(mailOptions);
+//   smtpTransport.sendMail(mailOptions, function(error, response){
+//    if(error){
+//           console.log(error);
+//       res.end("error");
+//    }else{
+//           console.log("Message sent: " + response.message);
+//       res.end("sent");
+//        }
+// });
+// });
 
 var giDetails;
 app.get('/gi/:id',function(req,res){
@@ -100,7 +100,7 @@ app.get('/categories', function(req, res){
 app.get('/category/:id',function(req,res){
     var giQuery=firebase.database().ref('Giproducts');
     var cat=req.params.id.charAt(0).toUpperCase()+req.params.id.slice(1);
-    console.log(cat)
+    //console.log(cat)
 	const query=giQuery.orderByChild('category').equalTo(cat);
 	query.on('value',snap=>{
         //console.log(snap.val());
@@ -115,7 +115,7 @@ app.get('/search/:id',function(req,res){
     var giQuery=firebase.database().ref('Giproducts');
 	const query=giQuery.orderByChild('name').equalTo(req.params.id);
 	query.on('value',snap=>{
-        console.log(snap.val());
+        //console.log(snap.val());
         searched=snap.val();
         res.render('gi',{giDetails:searched})
     });	
