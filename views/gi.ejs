@@ -59,6 +59,14 @@
                                   <p><%=giDetails[key].uniqueness[k].info %></p>
                                   <%}%>
                               </div>
+                              <div>
+                                    <h2>Seller Info:</h2>
+                                    <%for (var k in giDetails[key].seller){%>
+                                        <p><%=giDetails[key].seller[k].name %></p>
+                                        <p><%=giDetails[key].seller[k].contact %></p>
+                                        <p><%=giDetails[key].seller[k].address %></p>
+                                    <%}%>
+                              </div>
                           </div>          
                     </div>  
                     <%}}%>
