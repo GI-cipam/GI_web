@@ -97,6 +97,19 @@ app.get('/categories', function(req, res){
 	res.render('categories',{categoryArray:categoryArray});
 });
 
+app.get('/category/:id',function(req,res){
+    var giQuery=firebase.database().ref('Giproducts');
+    var cat=req.params.id.charAt(0).toUpperCase()+req.params.id.slice(1);
+    console.log(cat)
+	const query=giQuery.orderByChild('category').equalTo(cat);
+	query.on('value',snap=>{
+        //console.log(snap.val());
+        giDetails=snap.val();
+        res.render('gi',{giDetails:giDetails})
+    });	
+    //console.log(req.params.id)
+});
+
 var searched;
 app.get('/search/:id',function(req,res){
     var giQuery=firebase.database().ref('Giproducts');
